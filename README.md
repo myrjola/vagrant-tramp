@@ -26,9 +26,11 @@ Or manually add to your emacs `load-path`.
 
 ## Usage
 
-The TRAMP method `vagrant` runs the `vagrant-tramp-ssh` script to get a list of
-running Vagrant boxes used in the auto-complete function:
+The TRAMP method `vagrant` makes use of the
+[Vagrant global status](https://docs.vagrantup.com/v2/cli/global-status.html) to
+get a list of running Vagrant instances:
 
+TODO fix the completions
 <kbd>C-x C-f /vagrant:</kbd>
 
     Find file: /vagrant:
@@ -40,7 +42,7 @@ running Vagrant boxes used in the auto-complete function:
 
 Boxes are named using the `Vagrantfile` directory basename and the VM name
 (excluding *default*) to support multi-VM environments.
-When TRAMP opens a connection via `vagrant-tramp-ssh`, the script just cd's into
+When TRAMP opens a connection to a box  cd's into
 the `Vagrantfile` directory and execs `vagrant ssh $box_name`.
 
 ### Opening a file as root
